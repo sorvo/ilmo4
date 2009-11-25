@@ -1,0 +1,18 @@
+<h2>Registration</h2>
+
+<% form_for @user do |f| %>
+
+	<%= error_messages_for "user" %>
+
+	Username:
+   	<%= f.text_field :username %><br />
+   	
+	Password:
+   	<%= f.password_field :password %><br />
+
+	Re-type password:
+	<%= f.password_field :password_confirmation %><br />
+	
+	<%= submit_tag "Register" %>
+	
+<% end %>

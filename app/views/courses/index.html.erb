@@ -1,0 +1,26 @@
+<h1>Ilmo 2.0</h1>
+
+<p>
+You are logged in as <%= session[:username] %>. 
+[ <%= link_to 'Logout', logout_url, :method => :delete %> ]
+</p>
+
+<p>
+<% @courses.each do |course| %>
+    <%= link_to course.name, course %>
+    (<%= link_to 'edit', edit_course_path(course) %>|<%= link_to 'destroy', course, :confirm => 'Are you sure?', :method => :delete %>)<br />
+<% end %>
+
+<br />
+
+<!-- Testing named_scope -->
+Testing named scopes, list of 3 newest courses:<br>
+<%= Course.latest[0].name %><br />
+<%= Course.latest[1].name %><br />
+<%= Course.latest[2].name %><br />
+
+<br /><br />
+
+<%= link_to 'Add a new course', new_course_path %>
+
+</p>

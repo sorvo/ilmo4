@@ -1,0 +1,7 @@
+<h2><%= @ci.course.name %>: <%= @ci.name %></h2>
+
+<ul>
+	<% @ci.exercise_groups.each do |ex| %>
+	<li><%= link_to ex.name, exercise_group_url(ex) %></li>
+	<% end %>
+</ul>

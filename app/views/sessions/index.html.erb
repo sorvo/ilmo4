@@ -1,0 +1,18 @@
+<h2>Login</h2>
+
+<font color="green"><%= flash[:notice] %></font><br />
+<font color="red"><%= flash[:error] %></font><br />
+
+<% form_for :user, :action => :create do |f| %>
+	<%= f.error_messages %>
+   	<%= f.label :username, 'Username' %>:
+   	<%= f.text_field :username %><br />
+   	<%= f.label :password, 'Password' %>:
+   	<%= f.password_field :password %><br />
+
+	<%= submit_tag "Login" %>
+	<br /><br />
+	
+	<%= link_to "Register", new_user_url %>
+	
+	<% end %>
